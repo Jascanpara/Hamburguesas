@@ -22,13 +22,6 @@ namespace Hamburguesas
         public Form1()
         {
             InitializeComponent();
-            //Delete Buttton
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            grilla.Columns.Add(btn);
-            btn.HeaderText = "Delete";
-            btn.Text = "...X...";
-            btn.Name = "btn";
-            btn.UseColumnTextForButtonValue = true;
 
             button1.BackgroundImage = Image.FromFile(@"C:\Users\SEARS\Music\6to semestre\Patrones de Diseño\Patrones de diseño\Hamburguesas\Hamburguesas\Imagenes\H6.jpg");
             button2.BackgroundImage = Image.FromFile(@"C:\Users\SEARS\Music\6to semestre\Patrones de Diseño\Patrones de diseño\Hamburguesas\Hamburguesas\Imagenes\H7.jpg");
@@ -157,6 +150,7 @@ namespace Hamburguesas
         {
             lPagar.Text = Pago.ToString();
             Tabla = new DataTable();
+            Tabla.Columns.Add("Delete", typeof(bool));
             Tabla.Columns.Add("Producto");
             Tabla.Columns.Add("Nombre");
             Tabla.Columns.Add("Pan");
@@ -411,14 +405,21 @@ namespace Hamburguesas
             Consultar();
         }
 
-        private void grilla_Cell(object sender, DataGridViewCellEventArgs e)
-        {
-            grilla.Rows.Remove(grilla.Rows[e.RowIndex]);
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button21_Click(object sender, EventArgs e)
+        {
+            for (int i=grilla.Rows.Count-1; i>0; i--)
+            {
+                DataGridViewRow row = grilla.Rows[i - 1];
+                if (Convert.ToBoolean(row.Cells["Column1"].Value)==true)
+                {
+                    grilla.Rows.Remove(row);
+                }
+            }
         }
     }
 }
