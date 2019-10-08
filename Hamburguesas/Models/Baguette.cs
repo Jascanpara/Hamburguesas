@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using Hamburguesas.Builders;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Hamburguesas.Models
 {
-    public class Hamburguesa: IFood
+    public class Baguette : IFood
     {
         public int Precio { get; set; }
         public string Pan { get; set; }
@@ -14,15 +16,14 @@ namespace Hamburguesas.Models
         public string Nombre { get; set; }
         public string Producto { get; set; }
 
-        public Hamburguesa()
+        public Baguette()
         {
 
         }
 
-        public Hamburguesa(TamañoEnum tamaño,int precio, string pan, string producto, string salsa, List<string> relleno)
+        public Baguette(TamañoEnum tamaño, int precio, string pan, string salsa, List<string> relleno)
         //: this() //contructor manda a llamar al contructor base
         {
-            Producto = producto;
             Tamaño = tamaño;
             Precio = precio;
             Pan = pan;
@@ -32,12 +33,7 @@ namespace Hamburguesas.Models
 
         public override string ToString()
         {
-            return $"Producto: {Producto},Hamburguesa: {Nombre} / Tamaño: {Tamaño}, Pan: {Pan}, Salsa: {Salsa}, Relleno: {string.Join("+", Relleno)}";
-        }
-
-        public static implicit operator Hamburguesa(HBiulder v)
-        {
-            throw new NotImplementedException();
+            return $"Hamburguesa: {Nombre} / Tamaño: {Tamaño}, Pan: {Pan}, Salsa: {Salsa}, Relleno: {string.Join("+", Relleno)}";
         }
     }
 }

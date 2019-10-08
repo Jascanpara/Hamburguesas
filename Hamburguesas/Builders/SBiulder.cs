@@ -2,21 +2,17 @@
 
 namespace Hamburguesas.Builders
 {
-    public abstract class HBiulder 
+    public abstract class SBiulder
     {
         // Protected para que las clases que implementen puedan acceder
-        protected Hamburguesa _Hamburguesa;
+        protected Sandwish _sandwish;
 
         public string Tamaño { get; set; }
 
-        public Hamburguesa ObtenerHamburguesa() { return _Hamburguesa; }
+        public Sandwish ObtenerHamburguesa() { return _sandwish; }
 
         // Un paso para cada una de las propiedades
         public virtual void PasoPrepararPan()
-        {
-
-        }
-        public virtual void PasoPrepararProducto()
         {
 
         }
@@ -31,7 +27,7 @@ namespace Hamburguesas.Builders
 
         }
 
-        public virtual void PasoMontarHamburguesa()
+        public virtual void PasoMontarSandwish()
         {
 
         }

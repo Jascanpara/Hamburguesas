@@ -1,32 +1,42 @@
 ﻿using Hamburguesas.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Hamburguesas.Dato
 {
     class Usuario
     {
-        List<Hamburguesa> lista = new List<Hamburguesa>();
+        List<Hamburguesa> listaH = new List<Hamburguesa>();
+        List<Baguette> listaB = new List<Baguette>();
+        List<Sandwish> listaS = new List<Sandwish>();
 
         //Guardar los usuarios
-        public void Guardar(Hamburguesa modelo)
+        public void Guardar(Hamburguesa modeloH, Baguette modeloB, Sandwish modeloS)
         {
-            lista.Add(modelo);
+            listaH.Add(modeloH);
+            listaB.Add(modeloB);
+            listaS.Add(modeloS);
         }
 
         //Consulta todos los usuarios
 
-        public List<Hamburguesa> Consultar()
+        public List<Hamburguesa> ConsultarH()
         {
-            return lista;
+            return listaH;
+        }
+        public List<Baguette> ConsultarB()
+        {
+            return listaB;
+        }
+        public List<Sandwish> ConsultarS()
+        {
+            return listaS;
         }
 
         public void Limpiar()
         {
-            lista.Clear();
+            listaH.Clear();
+            listaB.Clear();
+            listaS.Clear();
         }
     }
 }

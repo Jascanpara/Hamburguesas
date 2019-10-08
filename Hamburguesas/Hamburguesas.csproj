@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builders\B1.cs" />
+    <Compile Include="Builders\BBiulder.cs" />
     <Compile Include="Builders\H1.cs" />
     <Compile Include="Builders\H10.cs" />
     <Compile Include="Builders\H2.cs" />
@@ -57,6 +59,12 @@
     <Compile Include="Builders\H8.cs" />
     <Compile Include="Builders\H9.cs" />
     <Compile Include="Builders\HBiulder.cs" />
+    <Compile Include="Builders\S1.cs" />
+    <Compile Include="Builders\SBiulder.cs" />
+    <Compile Include="Creator\BLogistics.cs" />
+    <Compile Include="Creator\HLogistics.cs" />
+    <Compile Include="Creator\Logistics.cs" />
+    <Compile Include="Creator\SLogistics.cs" />
     <Compile Include="Dato\Usuario.cs" />
     <Compile Include="Director\Cocina.cs" />
     <Compile Include="Form1.cs">
@@ -65,8 +73,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Baguette.cs" />
     <Compile Include="Models\Hamburguesa.cs" />
+    <Compile Include="Models\IFood.cs" />
     <Compile Include="Models\PrecioEnum.cs" />
+    <Compile Include="Models\Sandwish.cs" />
     <Compile Include="Models\TamañoEnum.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

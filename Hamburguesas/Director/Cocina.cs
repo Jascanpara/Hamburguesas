@@ -6,28 +6,30 @@ namespace Hamburguesas.Director
 {
     public class Cocina
     {
-        private HBiulder _HBuilder;
+        private HBiulder _hBuilder;
 
-        public void RecepcionarProximaHamburguesa(HBiulder HBuilder)
+        public void RecepcionarProximaH(HBiulder pizzaBuilder)
         {
-            _HBuilder = HBuilder;
+            _hBuilder = pizzaBuilder;
         }
 
         public void CocinarHamburguesaPasoAPaso()
         {
-            _HBuilder.PasoPrepararPan();
-            _HBuilder.PasoAñadirSalsa();
-            _HBuilder.PasoPrepararRelleno();
+            _hBuilder.PasoPrepararProducto();
+            _hBuilder.PasoPrepararPan();
+            _hBuilder.PasoAñadirSalsa();
+            _hBuilder.PasoPrepararRelleno();
         }
 
-        public Hamburguesa HPreparada => _HBuilder.ObtenerHamburguesa();
+        public Hamburguesa PizzaPreparada => _hBuilder.ObtenerHamburguesa();
 
-        public Hamburguesa CocinarHamburguesa(HBiulder HBuilder)
+        public Hamburguesa CocinarPizza(HBiulder hBuilder)
         {
-            HBuilder.PasoPrepararPan();
-            HBuilder.PasoAñadirSalsa();
-            HBuilder.PasoPrepararRelleno();
-            return HBuilder.ObtenerHamburguesa();
+            hBuilder.PasoPrepararProducto();
+            hBuilder.PasoPrepararPan();
+            hBuilder.PasoAñadirSalsa();
+            hBuilder.PasoPrepararRelleno();
+            return hBuilder.ObtenerHamburguesa();
         }
     }
 }
