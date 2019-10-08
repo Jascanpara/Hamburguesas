@@ -14,7 +14,7 @@ using System.Windows.Forms;
 namespace Hamburguesas
 {
     public partial class Form1 : Form
-    {        
+    {
         int Aux = 0;
         int Pago = 0;
         DataTable Tabla;
@@ -22,6 +22,14 @@ namespace Hamburguesas
         public Form1()
         {
             InitializeComponent();
+            //Delete Buttton
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            grilla.Columns.Add(btn);
+            btn.HeaderText = "Delete";
+            btn.Text = "...X...";
+            btn.Name = "btn";
+            btn.UseColumnTextForButtonValue = true;
+
             button1.BackgroundImage = Image.FromFile(@"C:\Users\SEARS\Music\6to semestre\Patrones de Diseño\Patrones de diseño\Hamburguesas\Hamburguesas\Imagenes\H6.jpg");
             button2.BackgroundImage = Image.FromFile(@"C:\Users\SEARS\Music\6to semestre\Patrones de Diseño\Patrones de diseño\Hamburguesas\Hamburguesas\Imagenes\H7.jpg");
             button3.BackgroundImage = Image.FromFile(@"C:\Users\SEARS\Music\6to semestre\Patrones de Diseño\Patrones de diseño\Hamburguesas\Hamburguesas\Imagenes\H2.jpg");
@@ -42,6 +50,28 @@ namespace Hamburguesas
             button18.BackgroundImage = Image.FromFile(@"C:\Users\SEARS\Music\6to semestre\Patrones de Diseño\Patrones de diseño\Hamburguesas\Hamburguesas\Imagenes\S3.jpg");
             button19.BackgroundImage = Image.FromFile(@"C:\Users\SEARS\Music\6to semestre\Patrones de Diseño\Patrones de diseño\Hamburguesas\Hamburguesas\Imagenes\S4.jpg");
             button20.BackgroundImage = Image.FromFile(@"C:\Users\SEARS\Music\6to semestre\Patrones de Diseño\Patrones de diseño\Hamburguesas\Hamburguesas\Imagenes\S5.jpg");
+
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button4.BackgroundImageLayout = ImageLayout.Stretch;
+            button5.BackgroundImageLayout = ImageLayout.Stretch;
+            button6.BackgroundImageLayout = ImageLayout.Stretch;
+            button7.BackgroundImageLayout = ImageLayout.Stretch;
+            button8.BackgroundImageLayout = ImageLayout.Stretch;
+            button9.BackgroundImageLayout = ImageLayout.Stretch;
+            button10.BackgroundImageLayout = ImageLayout.Stretch;
+            button11.BackgroundImageLayout = ImageLayout.Stretch;
+            button12.BackgroundImageLayout = ImageLayout.Stretch;
+            button13.BackgroundImageLayout = ImageLayout.Stretch;
+            button14.BackgroundImageLayout = ImageLayout.Stretch;
+            button15.BackgroundImageLayout = ImageLayout.Stretch;
+            button16.BackgroundImageLayout = ImageLayout.Stretch;
+            button17.BackgroundImageLayout = ImageLayout.Stretch;
+            button18.BackgroundImageLayout = ImageLayout.Stretch;
+            button19.BackgroundImageLayout = ImageLayout.Stretch;
+            button20.BackgroundImageLayout = ImageLayout.Stretch;
+
             Iniciar();
         }
         private void Button1_Click(object sender, EventArgs e)
@@ -185,43 +215,43 @@ namespace Hamburguesas
                     Pago += ham.Precio;
                     break;
                 case 11:
-                    bag = new Baguette { Tamaño = TamañoEnum.simple, Producto = "Baguette", Nombre = "CuatroQuesos", Pan = "Integral", Salsa = "Roquefort", Precio = 55 };
+                    bag = new Baguette { Tamaño = TamañoEnum.simple, Producto = "Baguette", Nombre = "VeguiCheeese", Pan = "Integral", Salsa = "Roquefort", Precio = 55 };
                     Pago += bag.Precio;
                     break;
                 case 12:
-                    bag = new Baguette { Tamaño = TamañoEnum.doble, Producto = "Baguette", Nombre = "Hawaiana", Pan = "Parmesano", Salsa = "Piña", Precio = 65 };
+                    bag = new Baguette { Tamaño = TamañoEnum.doble, Producto = "Baguette", Nombre = "Portobello", Pan = "Parmesano", Salsa = "Piña", Precio = 65 };
                     Pago += bag.Precio;
                     break;
                 case 13:
-                    bag = new Baguette { Tamaño = TamañoEnum.simple, Producto = "Baguette", Nombre = "Integral", Pan = "Integral", Salsa = "Vegui", Precio = 55 };
+                    bag = new Baguette { Tamaño = TamañoEnum.simple, Producto = "Baguette", Nombre = "Tradicional", Pan = "Integral", Salsa = "Vegui", Precio = 55 };
                     Pago += bag.Precio;
                     break;
                 case 14:
-                    bag = new Baguette { Tamaño = TamañoEnum.triple, Producto = "Baguette", Nombre = "Birrea", Pan = "Ajonjoli", Salsa = "Roja", Precio = 75 };
+                    bag = new Baguette { Tamaño = TamañoEnum.triple, Producto = "Baguette", Nombre = "Pavo", Pan = "Ajonjoli", Salsa = "Roja", Precio = 75 };
                     Pago += bag.Precio;
                     break;
                 case 15:
-                    bag = new Baguette { Tamaño = TamañoEnum.doble, Producto = "Baguette", Nombre = "Caramelisada", Pan = "Oregano", Salsa = "Cebolla dulce", Precio = 65 };
+                    bag = new Baguette { Tamaño = TamañoEnum.doble, Producto = "Baguette", Nombre = "PolloVegui", Pan = "Oregano", Salsa = "Cebolla dulce", Precio = 65 };
                     Pago += bag.Precio;
                     break;
                 case 16:
-                    san = new Sandwish { Tamaño = TamañoEnum.triple, Producto = "Sandwish", Nombre = "Tradicional", Pan = "Tostado", Salsa = "Golf", Precio = 75 };
+                    san = new Sandwish { Tamaño = TamañoEnum.triple, Producto = "Sandwish", Nombre = "Wakamole", Pan = "Tostado", Salsa = "Golf", Precio = 75 };
                     Pago += san.Precio;
                     break;
                 case 17:
-                    san = new Sandwish { Tamaño = TamañoEnum.simple, Producto = "Sandwish", Nombre = "Wakamole", Pan = "Normal", Salsa = "Palta", Precio = 55 };
+                    san = new Sandwish { Tamaño = TamañoEnum.simple, Producto = "Sandwish", Nombre = "Whooper", Pan = "Normal", Salsa = "Palta", Precio = 55 };
                     Pago += san.Precio;
                     break;
                 case 18:
-                    san = new Sandwish { Tamaño = TamañoEnum.doble, Producto = "Sandwish", Nombre = "Punt de S", Pan = "Integral", Salsa = "Roquefort", Precio = 65 };
+                    san = new Sandwish { Tamaño = TamañoEnum.doble, Producto = "Sandwish", Nombre = "Ahumado", Pan = "Integral", Salsa = "Roquefort", Precio = 65 };
                     Pago += san.Precio;
                     break;
                 case 19:
-                    san = new Sandwish { Tamaño = TamañoEnum.doble, Producto = "Sandwish", Nombre = "Wooper", Pan = "Normal", Salsa = "Cesar", Precio = 65 };
+                    san = new Sandwish { Tamaño = TamañoEnum.doble, Producto = "Sandwish", Nombre = "Parrilla", Pan = "Normal", Salsa = "Cesar", Precio = 65 };
                     Pago += san.Precio;
                     break;
                 case 20:
-                    san = new Sandwish { Tamaño = TamañoEnum.simple, Producto = "Sandwish", Nombre = "Bacon", Pan = "Mantequilla", Salsa = "BBQ", Precio = 55, Relleno = new List<string>(new string[] { "mozzarela", "gorgonzola", "parmesano", "ricotta" }) };
+                    san = new Sandwish { Tamaño = TamañoEnum.simple, Producto = "Sandwish", Nombre = "De la casa", Pan = "Mantequilla", Salsa = "BBQ", Precio = 55, Relleno = new List<string>(new string[] { "mozzarela", "gorgonzola", "parmesano", "ricotta" }) };
                     Pago += san.Precio;
                     break;
             }
@@ -240,6 +270,7 @@ namespace Hamburguesas
                     fila["Salsa"] = item.Salsa;
                     //fila["Relleno"] = item.Relleno;
                     fila["Precio"] = item.Precio;
+                    //fila["Delete"] = btn;
                     Tabla.Rows.Add(fila);
                 }
             }
@@ -378,6 +409,16 @@ namespace Hamburguesas
             Guardar();
             Iniciar();
             Consultar();
+        }
+
+        private void grilla_Cell(object sender, DataGridViewCellEventArgs e)
+        {
+            grilla.Rows.Remove(grilla.Rows[e.RowIndex]);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
