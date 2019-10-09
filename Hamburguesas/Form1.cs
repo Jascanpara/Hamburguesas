@@ -415,10 +415,15 @@ namespace Hamburguesas
             for (int i=grilla.Rows.Count-1; i>0; i--)
             {
                 DataGridViewRow row = grilla.Rows[i - 1];
-                if (Convert.ToBoolean(row.Cells["Column1"].Value)==true)
+                try
                 {
-                    grilla.Rows.Remove(row);
+                    if (Convert.ToBoolean(row.Cells[0].Value) == true)
+                    {
+                        grilla.Rows.Remove(row);
+                    }
                 }
+                catch { }
+             
             }
         }
     }

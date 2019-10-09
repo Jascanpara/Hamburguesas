@@ -12,9 +12,12 @@ namespace Hamburguesas.Dato
         //Guardar los usuarios
         public void Guardar(Hamburguesa modeloH, Baguette modeloB, Sandwish modeloS)
         {
+            if (modeloH!=null)
             listaH.Add(modeloH);
-            listaB.Add(modeloB);
-            listaS.Add(modeloS);
+            if (modeloB != null)
+                listaB.Add(modeloB);
+            if (modeloS != null)
+                listaS.Add(modeloS);
         }
 
         //Consulta todos los usuarios
